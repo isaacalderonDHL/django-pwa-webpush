@@ -63,7 +63,7 @@ def _send_notification(subscription, payload, ttl):
 
 
 def _process_subscription_info(subscription):
-    subscription_data = model_to_dict(subscription, exclude=["browser", "id"])
+    subscription_data = model_to_dict(subscription.subscription, exclude=["browser", "id"])
     endpoint = subscription_data.pop("endpoint")
     p256dh = subscription_data.pop("p256dh")
     auth = subscription_data.pop("auth")
